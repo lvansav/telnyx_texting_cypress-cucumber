@@ -99,7 +99,7 @@ Feature: "Resources" header dropdown usage scenarios
         Examples:
         | service I | service II | service III | local | toll-free | sendSMS | receiveSMS | sendMMS | receiveMMS | to local | to toll-free | outbond | receive control | make control |
         | Messaging | Trunking   | Voice       | 10    | 10        | 10      | 10         | 10      | 10         | 10       | 10           | 10      | 10              | 10           |
-    
+    @only
     Scenario: Open the "Twillio migration guide" article from saving calculator page
 
         Given I hover over the "Resources" dropdown in the header

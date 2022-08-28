@@ -84,8 +84,7 @@ class SavingCalcPage extends MainPage {
     }
 
     getTwillioMigrGuideBtn() {
-        return cy.get('main')
-                .find('[href*="twilio-migration-guide"]')
+        return cy.get('main [href*="twilio-migration-guide"]')
     }
 
     twillioMigrGuideBtnClick() {

@@ -64,6 +64,13 @@ When(/^I click "Integrations" link$/, () => {
 And(/^I fill in the all fields in "Become a Telnyx partner" form$/, () => {
     const companyPartnersPage = new CompanyPartnersPage
 
+    
+    if (cy.url().then(($url) => {
+        return !($url.includes('partnerships'))
+    })) {
+        cy.wait(1000)
+    }
+
     companyPartnersPage
         .scrollToBuildList()
 
@@ -94,6 +101,12 @@ And(/^I click first link in possible result list$/, () => {
 
 And(/^I fill in all fields in the Become a Beta Tester form$/, () => {
     const integrationsPage = new IntegrationsPage
+
+    if (cy.url().then(($url) => {
+        return !($url.includes('integrations'))
+    })) {
+        cy.wait(1000)
+    }
 
     integrationsPage
         .getTelnyxDiffTitle()

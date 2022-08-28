@@ -27,8 +27,8 @@ Feature: "Company" header dropdown usage scenarios
         Then I am on the "Careers" page
            * I can see "careers at telnyx" subtitle above the title
            * I can see "Come and work with us!" title
-
-    Scenario: Become to Telnyx partnerson the Partners page
+    
+    Scenario: Become to Telnyx partners on the Partners page
 
         Become to Tenyx partners on the "Parents"
         page by filling in all fields after clicking
@@ -58,7 +58,7 @@ Feature: "Company" header dropdown usage scenarios
         Examples:
         |search|
         |Teams |
-     
+    
     Scenario: Become a Beta Tester in the Integrations page
 
         Go to the Integrations page from main page

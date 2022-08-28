@@ -225,7 +225,7 @@ Then(/^I can see "Try Telnyx for free" button$/, () => {
 
 Then(/^I am on "Move from Twillio to Telnyx" article page$/, () => {
 
-    cy.url()
+    cy.url({ timeout: 120000 })
       .should('contain', 'twilio-migration-guide')
 })
 
