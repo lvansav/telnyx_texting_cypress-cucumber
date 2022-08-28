@@ -8,9 +8,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Make executable the JSON-formatter
+        run: chmod +x ./helper/cucumber-json-formatter | ./helper/cucumber-json-formatter --help
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
-      - name: Recursive listing
-        run: tree .
+          install-command: npm install
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
