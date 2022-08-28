@@ -1,4 +1,5 @@
-The project for testing the telnyx website by cypress framework and cucumber preprocessor
+The project for testing the telnyx website by cypress framework and cucumber preprocessor.
+
 Available scripts:
     
     npm run test - run tests in headless mode
@@ -19,9 +20,11 @@ change attribute "formatter" to "./helper/cucumber-json-formatter.exe" in the
     }
     
 If you use MacOS or Linux, you need to make this file executable:
+    
     chmod +x cucumber-json-formatter
 
 For verify that you can run it:
+    
     cucumber-json-formatter --help
 
 For MacOS, you may get a security warning from MacOS. If you do, open System Preferences. 

@@ -8,7 +8,7 @@ report.generate({
             name: 'chrome',
             version: 'XX'
         },
-        device: 'Local test machine',
+        device: 'GitHub Action',
         platform: {
             name:'ubuntu',
             version: 'latest'

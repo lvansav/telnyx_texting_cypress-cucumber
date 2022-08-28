@@ -4,9 +4,9 @@
   "description": "Project for testing the Telnyx website by cypress+cucumber frameworks",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
-    "cypress:open": "cypress open",
-    "report:generate": "node ./cucumber-html-report.js"
+    "test": "cypress run --config-file config/cypress.config.js",
+    "cypress:open": "cypress open --config-file config/cypress.config.js",
+    "report:generate": "node ./helper/cucumber-html-report.js"
   },
   "repository": {
     "type": "git",

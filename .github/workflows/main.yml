@@ -25,6 +25,12 @@ jobs:
       - name: Generate report
         if: always()
         run: npm run report:generate
+      - name: Upload test run records
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: test_run_record
+          path: ./cypress/videos
       - name: Upload report
         if: always()
         uses: actions/upload-artifact@v2
