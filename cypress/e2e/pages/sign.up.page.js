@@ -1,6 +1,3 @@
-const { faker } = require('@faker-js/faker')
-const VerifyEmailPage = require('./verify.email.page')
-
 //locators
 const emailInput = '#email'
 const passwordInput = '#password'
@@ -37,34 +34,6 @@ class SignUpPage {
         return cy.get(submitBtn)
     }
 
-    signUpAfterTryItForFree() {
-        this.getNameInput().type(faker.name.fullName())
-        this.getPasswordInput().type(faker.internet.password(30, false, /[!-}]/, '!1'))
-        this.getTermsCheckbox().click()
-        this.getSubmitBtn().click()
-        this.getSubmitBtn().click({ force: true })
-        this.getSubmitBtn().click('bottom', { force: true })
-
-        const verifyEmailPage = new VerifyEmailPage
-        return verifyEmailPage
-    }
-
-    signUpByRequireFields() {
-        const email = faker.internet.email()
-        
-        this.getEmailInput().type(email)
-        this.getNameInput().type(faker.name.fullName())
-        this.getPasswordInput().type(faker.internet.password(30, false, /[!-}]/, '!1'))
-        this.getTermsCheckbox().click()
-        this.getSubscribeCheckbox().click()
-        this.getSubmitBtn().click()
-  
-
-        const verifyEmailPage = new VerifyEmailPage()
-        return {page: verifyEmailPage, 
-                email: email}
-    }
-
     signUpByAllFields(email, name, password) {
         
         this.getEmailInput().type(email)
@@ -73,11 +42,6 @@ class SignUpPage {
         this.getTermsCheckbox().click()
         this.getSubscribeCheckbox().click()
         this.getSubmitBtn().click()
-  
-
-        const verifyEmailPage = new VerifyEmailPage()
-        return {page: verifyEmailPage, 
-                email: email}
     }
 }
 

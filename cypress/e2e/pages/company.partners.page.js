@@ -1,5 +1,3 @@
-const { faker } = require('@faker-js/faker')
-
 const { CompanyBase } = require('./support.bases.pages')
 
 //locators

@@ -1,5 +1,3 @@
-const { faker } = require('@faker-js/faker')
-
 const { MainPage } = require('./main.page')
 
 //locators

@@ -1,6 +1,4 @@
-const { faker } = require('@faker-js/faker')
 const SignUpPage = require('./sign.up.page')
-const ContactUsPage = require('./contact.us.page')
 
 //locatos
 
