@@ -6,7 +6,7 @@ const { lightspeedStoryPage } = require('../pages/lightspeed.story.page')
 
 const { savingCalcPage } = require('../pages/saving.calc.page')
 
-const { moveTwillioArticlePage } = require('../pages/articles.pages')
+const { moveTwilioArticlePage } = require('../pages/articles.pages')
 
 const baseURL = Cypress.config().baseUrl
 
@@ -209,7 +209,7 @@ Then(/^I am on "Move from Twillio to Telnyx" article page$/, () => {
 
 Then(/^I can see "Move from Twillio to Telnyx" article title$/, () => {
 
-    moveTwillioArticlePage
+    moveTwilioArticlePage
         .getArticleTitle()
         .should('contain.text', 'Move from Twilio to Telnyx')
 })
