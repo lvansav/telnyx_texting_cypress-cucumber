@@ -35,6 +35,7 @@ jobs:
           install-command: npm install
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
       - name: Generate report
         if: always()
         run: npm run report:generate
