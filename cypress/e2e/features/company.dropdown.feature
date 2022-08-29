@@ -58,7 +58,7 @@ Feature: "Company" header dropdown usage scenarios
         Examples:
         |search|
         |Teams |
-    @only
+    
     Scenario: Become a Beta Tester in the Integrations page with random data
 
         Go to the Integrations page from main page

@@ -3,7 +3,7 @@ Feature: Footer links usage scenarios
     Background:
         Given The Telnyx website
         And Accept all cookies
-    @only
+    
     Scenario: Sign up by the footer link with random data
         
         Sign up after click "Sign up" in the
