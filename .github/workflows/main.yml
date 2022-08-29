@@ -8,7 +8,16 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [16]
+    name: E2E on Node v${{ matrix.node }}
     steps:
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node -v
       - name: Checkout
         uses: actions/checkout@v2
       - name: Make executable the JSON-formatter
@@ -18,7 +27,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          browser: chrome
+          tag: node-${{ matrix.node }}
           install-command: npm install
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
