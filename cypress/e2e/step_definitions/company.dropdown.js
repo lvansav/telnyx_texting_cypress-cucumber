@@ -1,4 +1,6 @@
 const { Given, And, When, Then } = require('@badeball/cypress-cucumber-preprocessor')
+const { faker } = require('@faker-js/faker')
+
 const { MainPage } = require('../pages/main.page')
 
 const CompanyAboutPage = require('../pages/company.about.page')
@@ -10,6 +12,19 @@ const { MarketplacePage } = require('../pages/support.bases.pages')
 const MarketplaceMSTeamsPage = require('../pages/marketplase.msteams.page')
 
 const baseURL = Cypress.config().baseUrl
+
+const fakeFirstName = faker.name.firstName()
+const fakeLastName = faker.name.lastName()
+const fakeCompany = faker.company.name()
+const fakeEmail = faker.internet.email()
+const fakePhone = faker.phone.number()
+const randomPartnerTypeOpt = Math.floor(Math.random() * 5) + 1
+const randomParagraph = faker.lorem.paragraph()
+
+const fakeWebsite = faker.internet.url()
+const randomIndustry = faker.commerce.product()
+const randomUseCaseOpt = Math.floor(Math.random() * 18) + 1
+
 
 Given(/^I hover over the "Company" dropdown in the header$/, () => {
     const mainPage = new MainPage
@@ -61,14 +76,22 @@ When(/^I click "Integrations" link$/, () => {
         .moveFromHeader()
 })
 
-And(/^I fill in the all fields in "Become a Telnyx partner" form$/, () => {
+And(/^I fill in the all fields in "Become a Telnyx partner" form with random data$/, () => {
     const companyPartnersPage = new CompanyPartnersPage
 
     companyPartnersPage
         .scrollToBuildList()
 
     companyPartnersPage
-        .fillAllFormFields()
+        .fillAllFormFields(
+            fakeFirstName,
+            fakeLastName,
+            fakeCompany,
+            fakeEmail,
+            fakePhone,
+            randomPartnerTypeOpt,
+            randomParagraph
+        )
 })
 
 And(/^I click "Explore our marketplace" button$/, () => {
@@ -92,7 +115,7 @@ And(/^I click first link in possible result list$/, () => {
         .firstPossibleResultClick()
 })
 
-And(/^I fill in all fields in the Become a Beta Tester form$/, () => {
+And(/^I fill in all fields in the Become a Beta Tester form with random data$/, () => {
     const integrationsPage = new IntegrationsPage
 
     integrationsPage
@@ -100,7 +123,14 @@ And(/^I fill in all fields in the Become a Beta Tester form$/, () => {
         .scrollIntoView()
 
     integrationsPage
-        .fillAllFormsField()
+        .fillAllFormsField(
+            fakeFirstName,
+            fakeLastName,
+            fakeWebsite,
+            fakeEmail,
+            randomIndustry,
+            randomUseCaseOpt
+        )
 })
 
 Then(/^I am on the "About Telnyx" page$/, () => {
@@ -156,22 +186,27 @@ Then(/^All fields are filled$/, () => {
     companyPartnersPage
         .getFirstNameField()
         .should('be.visible')
+        .and('have.value', fakeFirstName)
     
     companyPartnersPage
         .getLastNameField()
         .should('be.visible')
+        .and('have.value', fakeLastName)
 
     companyPartnersPage
         .getCompanyField()
         .should('be.visible')
+        .and('have.value', fakeCompany)
 
     companyPartnersPage
         .getEmailField()
         .should('be.visible')
+        .and('have.value', fakeEmail)
 
     companyPartnersPage
         .getPhoneField()
         .should('be.visible')
+        .and('have.value', fakePhone)
 
     companyPartnersPage
         .getPartnerTypeSelect()
@@ -180,6 +215,7 @@ Then(/^All fields are filled$/, () => {
     companyPartnersPage
         .getBecomeReasonField()
         .should('be.visible')
+        .and('have.value', randomParagraph)
 
     companyPartnersPage
         .getReceiveEmailsChexbox()
@@ -219,23 +255,31 @@ Then(/^Last item in the breadcrumb is '(\w+)'$/, (search) => {
 
 Then(/^All fields are filling$/, () => {
     const integrationsPage = new IntegrationsPage
-    const re = new RegExp('a*');
 
     integrationsPage
         .getFirstNameField()
         .should('be.visible')
+        .and('have.value', fakeFirstName)
         
     integrationsPage
         .getLastNameField()
         .should('be.visible')
+        .and('have.value', fakeLastName)
 
     integrationsPage
         .getCompanyField()
         .should('be.visible')
+        .and('have.value', fakeWebsite)
 
     integrationsPage
         .getEmailField()
         .should('be.visible')
+        .and('have.value', fakeEmail)
+
+    integrationsPage
+        .getIndustryField()
+        .should('be.visible')
+        .and('have.value', randomIndustry)
 
     integrationsPage
         .getUseCaseSelect()

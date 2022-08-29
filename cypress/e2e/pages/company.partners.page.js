@@ -69,23 +69,29 @@ class CompanyPartnersPage extends CompanyBase {
             .scrollIntoView()
     }
 
-    fillAllFormFields() {
-        const randomOpt = Math.floor(Math.random() * 5) + 1;
-
+    fillAllFormFields(
+        firstName,
+        lastName,
+        company,
+        email,
+        phone,
+        partnerType,
+        reason
+    ) {
         this.getFirstNameField()
-            .type(faker.name.firstName())
+            .type(firstName)
         this.getLastNameField()
-            .type(faker.name.lastName())
+            .type(lastName)
         this.getCompanyField()
-            .type(faker.company.name())
+            .type(company)
         this.getEmailField()
-            .type(faker.internet.email())
+            .type(email)
         this.getPhoneField()
-            .type(faker.phone.number())
+            .type(phone)
         this.getPartnerTypeSelect()
-            .select(randomOpt)
+            .select(partnerType)
         this.getBecomeReasonField()
-            .type(faker.lorem.paragraph())
+            .type(reason)
         this.getReceiveEmailsChexbox()
             .realClick()
     }

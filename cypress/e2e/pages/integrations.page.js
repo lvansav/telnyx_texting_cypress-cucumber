@@ -59,21 +59,26 @@ class IntegrationsPage extends MainPage {
             .click()
     }
 
-    fillAllFormsField() {
-        const randomOpt = Math.floor(Math.random() * 18) + 1;
-
+    fillAllFormsField(
+        firstName,
+        lastName,
+        website,
+        email,
+        industry,
+        useCaseOpt
+    ) {
         this.getFirstNameField()
-            .type(faker.name.firstName())
+            .type(firstName)
         this.getLastNameField()
-            .type(faker.name.lastName())
+            .type(lastName)
         this.getCompanyField()
-            .type(faker.internet.url())
+            .type(website)
         this.getEmailField()
-            .type(faker.internet.email())
+            .type(email)
         this.getIndustryField()
-            .type(faker.commerce.product())
+            .type(industry)
         this.getUseCaseSelect()
-            .select(randomOpt)
+            .select(useCaseOpt)
     }
 }
 

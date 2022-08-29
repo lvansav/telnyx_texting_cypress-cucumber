@@ -15,6 +15,7 @@ Feature: "Company" header dropdown usage scenarios
         Then I am on the "About Telnyx" page
            * I can see "About us" subtitle above the title
            * I can see Telnyx office pictures
+    
     Scenario: Open the "Careers" page
 
         Go to the "Cereers" page by clicking
@@ -27,7 +28,7 @@ Feature: "Company" header dropdown usage scenarios
            * I can see "careers at telnyx" subtitle above the title
            * I can see "Come and work with us!" title
     
-    Scenario: Become to Telnyx partners on the Partners page
+    Scenario: Become to Telnyx partners on the Partners page with random data
 
         Become to Tenyx partners on the "Parents"
         page by filling in all fields after clicking
@@ -36,7 +37,7 @@ Feature: "Company" header dropdown usage scenarios
 
         Given I hover over the "Company" dropdown in the header
         When I click "Partners" link
-        And I fill in the all fields in "Become a Telnyx partner" form
+        And I fill in the all fields in "Become a Telnyx partner" form with random data
         Then All fields are filled
 
     Scenario Outline: Go to the "MS Teams integrations" page
@@ -57,8 +58,8 @@ Feature: "Company" header dropdown usage scenarios
         Examples:
         |search|
         |Teams |
-    
-    Scenario: Become a Beta Tester in the Integrations page
+    @only
+    Scenario: Become a Beta Tester in the Integrations page with random data
 
         Go to the Integrations page from main page
         and become a Beta Tester by filling in the all
@@ -66,5 +67,5 @@ Feature: "Company" header dropdown usage scenarios
 
         Given I hover over the "Company" dropdown in the header
         When I click "Integrations" link
-        And I fill in all fields in the Become a Beta Tester form
+        And I fill in all fields in the Become a Beta Tester form with random data
         Then All fields are filling
