@@ -3,6 +3,9 @@ The project for testing the telnyx website by cypress framework and cucumber pre
 Available scripts:
     
     npm run test - run tests in headless mode
+    npm run cypress:run:chrome - run tests in chrome headless mode
+    npm run cypress:run:firefox - run tests in firefox headless mode
+    npm run cypress:run:edge - run tests in edge headless mode
     npm run cypress:open - open headed cypress framework
     npm run report:generate - create reports folder and add html test run report to it
 

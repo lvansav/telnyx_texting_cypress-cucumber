@@ -7,8 +7,8 @@ const createEsbuildPlugin =
 
 
 module.exports = defineConfig({
-  viewportHeight: 1080,
-  viewportWidth: 1920,
+  viewportHeight: 1440,
+  viewportWidth: 2560,
   e2e: {
     baseUrl: 'https://telnyx.com',
     pageLoadTimeout: 120000,
@@ -27,7 +27,7 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
   },
   retries: {
-    'runMode': 3,
+    'runMode': 2,
     'openMode': 2
   }
 });

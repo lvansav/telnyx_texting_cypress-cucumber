@@ -6,6 +6,11 @@
   "scripts": {
     "test": "cypress run",
     "cypress:open": "cypress open",
+    "cypress:run:chrome": "cypress run --browser chrome",
+    "cypress:run:firefox": "cypress run --browser firefox",
+    "cypress:run:edge": "cypress run --browser edge",
+    "cypress:run:viewport:large": "cypress run --config-file config/cypress.big.viewport.js",
+    "cypress:open:viewport:large": "npx cypress open --config-file config/cypress.big.viewport.js",
     "report:generate": "node ./helper/cucumber-html-report.js"
   },
   "repository": {
