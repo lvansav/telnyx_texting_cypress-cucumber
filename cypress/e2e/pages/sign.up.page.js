@@ -1,32 +1,40 @@
 const { faker } = require('@faker-js/faker')
 const VerifyEmailPage = require('./verify.email.page')
 
+//locators
+const emailInput = '#email'
+const passwordInput = '#password'
+const nameInput = '#full_name'
+const termsBox = '#terms_and_conditions'
+const subscribeBox = '#subscription_opt_in'
+const submitBtn = '[type="submit"]'
+
 
 class SignUpPage {
     getEmailInput() {
-        return cy.get('#email')
+        return cy.get(emailInput, { timeout: 120000 })
     }
 
     getPasswordInput() {
-        return cy.get('#password')
+        return cy.get(passwordInput)
     }
 
     getNameInput() {
-        return cy.get('#full_name')
+        return cy.get(nameInput)
     }
 
     getTermsCheckbox() {
-        return    cy.get('#terms_and_conditions')
+        return    cy.get(termsBox)
                     .parent()
     }
 
     getSubscribeCheckbox() {
-        return    cy.get('#subscription_opt_in')
+        return    cy.get(subscribeBox)
                     .parent()
     }
 
     getSubmitBtn() {
-        return cy.get('[type="submit"]')
+        return cy.get(submitBtn)
     }
 
     signUpAfterTryItForFree() {

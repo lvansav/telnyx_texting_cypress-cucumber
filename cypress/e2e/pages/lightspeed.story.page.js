@@ -1,4 +1,4 @@
-const StoryBase = require('./story.base')
+const { StoryBase } = require('./support.bases.pages')
 
 
 class LightspeedStoryPage extends StoryBase {

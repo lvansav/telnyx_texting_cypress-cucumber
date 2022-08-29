@@ -1,15 +1,15 @@
 const { Given, And, When, Then } = require('@badeball/cypress-cucumber-preprocessor')
-const MainPage = require('../pages/main.page')
+const { MainPage } = require('../pages/main.page')
 
 const SignUpPage = require('../pages/sign.up.page')
 const VerifyEmailPage = require('../pages/verify.email.page')
 
 const SipTrunksProdPage = require('../pages/sip.trunks.prod.page')
-const SipTrunkingArticlePage = require('../pages/sip.trunking.article.page')
-const ChannelBillingArticlePage = require('../pages/channel.billing.article.page')
+const { SipTrunkingArticlePage } = require('../pages/articles.pages')
+const { ChannelBillingArticlePage } = require('../pages/articles.pages')
 const SipTrunksPricingPage = require('../pages/sip.trunking.pricing.page')
 
-const baseURL = Cypress.config().baseUrl                                                //
+const baseURL = Cypress.config().baseUrl                                                
 
 
 Given(/^I click "Sign up" footer link$/, () => {
@@ -70,7 +70,7 @@ And(/^I click "pricing" link$/, () => {
 
 Then(/^I am on verify email page$/, () => {
     
-    cy.url({ timeout: 60000 })
+    cy.getURL()
       .should('eq', `${baseURL}sign-up/verify-email/f`)
 })
 
@@ -93,19 +93,19 @@ Then(/^I can see "Resend verification email" button$/, () => {
 
 Then(/^I am on the "What SIP trunking is" article page$/, () => {
     
-    cy.url({ timeout: 60000 })
+    cy.getURL()
       .should('eq', `${baseURL}resources/sip-trunking-explained`)
 })
 
 Then(/^I am on the "Channel Billing" article page$/, () => {
     
-    cy.url({ timeout: 60000 })
+    cy.getURL()
       .should('eq', `${baseURL}resources/channel-billing-what-it-is-and-why-its-important`)
 })
 
 Then(/^I am on the SIP Trunk Pricing page$/, () => {
         
-    cy.url({ timeout: 60000 })
+    cy.getURL()
       .should('eq', `${baseURL}pricing/elastic-sip`)
 })
 

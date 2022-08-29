@@ -1,4 +1,4 @@
-const PricingBase = require('./pricing.base')
+const { PricingBase } = require('./support.bases.pages')
 
 
 class SipTrunksPricingPage extends PricingBase {

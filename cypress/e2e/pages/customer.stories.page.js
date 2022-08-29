@@ -1,10 +1,12 @@
-const MainPage = require('./main.page')
+const { MainPage } = require('./main.page')
 
+//locators
+const readCustStoriesLink = 'main [href*="/customer-stories"]'
 
 class CustomerStoriesPage extends MainPage {
 
     getReadCustomerStoriesLink(linkNum) {
-        return cy.get('main [href*="/customer-stories"]')
+        return cy.get(readCustStoriesLink)
                 .eq(linkNum)
     }
 

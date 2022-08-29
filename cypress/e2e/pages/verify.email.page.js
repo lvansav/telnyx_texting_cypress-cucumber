@@ -1,13 +1,22 @@
+//locators
+const verifyEmail = {
+    title: 'h1',
+    text: 'div',
+    btn: 'strong'
+}
+
+const resentEmailBtn = 'p>button'
+
+
 class VerifyEmailPage {
+    
     getVerifyEmail() {
-        return cy.get('h1')
-                .siblings('div')
-                .find('strong', { timeout: 120000 })
+        return cy.get(verifyEmail.title)
+                .siblings(verifyEmail.text)
     }
 
     getResentEmailBtn() {
-        return cy.get('p>button')
-                .should('be.visible')
+        return cy.get(resentEmailBtn)
     }
 }
 

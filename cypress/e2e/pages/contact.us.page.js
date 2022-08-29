@@ -1,42 +1,53 @@
 const { faker } = require('@faker-js/faker')
 
+//locators
+const reasonSelect = '#Reason_for_Contact__c'
+const selectSupportOpt = '[value="Support"]'
+const firstNameField = '#FirstName'
+const lastNameField = '#LastName'
+const emailField = '#Email'
+const phoneCode = '#Phone_Number_Extension__c'
+const phoneNumber = '#Phone_Number_Base__c'
+const websiteField = '#Website'
+const additionalField = '#Form_Additional_Information__c'
+const subscribeBox = '[name="Subscription_Opt_In__c"]'
 
 class ContantUsPage {
 
     getReasonSelect() {
-        return cy.get('#Reason_for_Contact__c')
+        return cy.get(reasonSelect)
     }
 
     getFirstNameField() {
-        return cy.get('#FirstName')
+        return cy.get(firstNameField)
     }
     
     getLastNameField() {
-        return cy.get('#LastName')
+        return cy.get(lastNameField)
     }
 
     getEmailField() {
-        return cy.get('#Email')
+        return cy.get(emailField)
     }
 
     getPhoneCode() {
-        return cy.get('#Phone_Number_Extension__c')
+        return cy.get(phoneCode)
     }
 
     getPhoneNumber() {
-        return cy.get('#Phone_Number_Base__c')
+        return cy.get(phoneNumber)
     }
 
     getWebsiteField() {
-        return cy.get('#Website')
+        return cy.get(websiteField)
     }
 
     getAdditionalField() {
-        return cy.get('#Form_Additional_Information__c')
+        return cy.get(additionalField)
     }
 
     getSubscribeCheckbox() {
-        return cy.get('[name="Subscription_Opt_In__c"]')
+        return cy.get(subscribeBox)
     }
 
     selectSupportReason() {
@@ -46,7 +57,7 @@ class ContantUsPage {
 
     getSupportOption() {
         return this.getReasonSelect()
-                    .find('[value="Support"]')
+                    .find(selectSupportOpt)
     }
 
     fillAllFields() {

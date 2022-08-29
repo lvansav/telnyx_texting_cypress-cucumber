@@ -1,41 +1,57 @@
 const { faker } = require('@faker-js/faker')
 
-const MainPage = require('./main.page')
+const { MainPage } = require('./main.page')
+
+//locators
+const exploreMarketBtn = {
+    title: 'main h1',
+    hook: 'div',
+    btn: 'a[href*="market"]'
+}
+
+const becomeTesterForm = '#become-a-beta-tester'
+const firstName = '#FirstName'
+const lastName = '#LastName'
+const companyField = '#Website'
+const emailField = '#Email'
+const industryField = '#Industry'
+const useCaseSelect = '#Use_Case_Form__c'
+
 
 class IntegrationsPage extends MainPage {
 
     getExploreMarketplaceBtn() {
-        return cy.get('main h1')
-                .siblings('div')
-                .find('a[href*="market"]')
+        return cy.get(exploreMarketBtn.title, { timeout: 120000})
+                .siblings(exploreMarketBtn.hook)
+                .find(exploreMarketBtn.btn)
     }
 
     getTelnyxDiffTitle() {
-        return cy.get('header h2')
+        return cy.get(becomeTesterForm)
     }
 
     getFirstNameField() {
-        return cy.get('#FirstName', { timeout: 60000 })
+        return cy.get(firstName, { timeout: 60000 })
     }
 
     getLastNameField() {
-        return cy.get('#LastName')
+        return cy.get(lastName)
     }
 
     getCompanyField() {
-        return cy.get('#Website')
+        return cy.get(companyField)
     }
 
     getEmailField() {
-        return cy.get('#Email')
+        return cy.get(emailField)
     }
 
     getIndustryField() {
-        return cy.get('#Industry')
+        return cy.get(industryField)
     }
 
     getUseCaseSelect() {
-        return cy.get('#Use_Case_Form__c')
+        return cy.get(useCaseSelect)
     }
 
     exploreMarketplaceBtnClick() {

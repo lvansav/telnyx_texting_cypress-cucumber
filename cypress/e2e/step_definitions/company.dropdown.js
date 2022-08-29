@@ -1,12 +1,12 @@
 const { Given, And, When, Then } = require('@badeball/cypress-cucumber-preprocessor')
-const MainPage = require('../pages/main.page')
+const { MainPage } = require('../pages/main.page')
 
 const CompanyAboutPage = require('../pages/company.about.page')
 const CompanyCareersPage = require('../pages/company.careers.page')
 const CompanyPartnersPage = require('../pages/company.partners.page')
 
 const IntegrationsPage = require('../pages/integrations.page')
-const MarketplacePage = require('../pages/marketplace.page')
+const { MarketplacePage } = require('../pages/support.bases.pages')
 const MarketplaceMSTeamsPage = require('../pages/marketplase.msteams.page')
 
 const baseURL = Cypress.config().baseUrl
@@ -64,13 +64,6 @@ When(/^I click "Integrations" link$/, () => {
 And(/^I fill in the all fields in "Become a Telnyx partner" form$/, () => {
     const companyPartnersPage = new CompanyPartnersPage
 
-    
-    if (cy.url().then(($url) => {
-        return !($url.includes('partnerships'))
-    })) {
-        cy.wait(1000)
-    }
-
     companyPartnersPage
         .scrollToBuildList()
 
@@ -102,12 +95,6 @@ And(/^I click first link in possible result list$/, () => {
 And(/^I fill in all fields in the Become a Beta Tester form$/, () => {
     const integrationsPage = new IntegrationsPage
 
-    if (cy.url().then(($url) => {
-        return !($url.includes('integrations'))
-    })) {
-        cy.wait(1000)
-    }
-
     integrationsPage
         .getTelnyxDiffTitle()
         .scrollIntoView()
@@ -118,13 +105,13 @@ And(/^I fill in all fields in the Become a Beta Tester form$/, () => {
 
 Then(/^I am on the "About Telnyx" page$/, () => {
 
-    cy.url({ timeout: 60000})
+    cy.getURL()
       .should('eq', `${baseURL}company/about`)
 })
 
 Then(/^I am on the "Careers" page$/, () => {
 
-    cy.url({ timeout: 60000})
+    cy.getURL()
       .should('eq', `${baseURL}company/careers`)
 })
 
@@ -202,7 +189,7 @@ Then(/^All fields are filled$/, () => {
 Then(/^I am on the '(\w+)' page$/, (search) => {
     search = search.toLowerCase()
 
-    cy.url({ timeout: 60000})
+    cy.getURL()
       .should('contain', search)
 })
 

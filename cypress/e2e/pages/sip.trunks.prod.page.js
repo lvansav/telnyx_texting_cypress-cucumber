@@ -1,33 +1,56 @@
 const AllProductPage = require('./all.product.page')
 
+//locators
+const listFAQ = 'main dl'
+
+const resCenterLink = {
+    question: '#faq1_description',
+    text: 'Resource Center'
+}
+
+const channelsLink = {
+    question: '#faq2_description',
+    text: 'channels'
+}
+
+const pricingLink = {
+    question: '#faq3_description',
+    text: 'pricing'
+}
+
+const faqAccordionBtn = {
+    title: 'main dl>div',
+    button: 'button'
+}
+
 
 class SipTrunksProdPage extends AllProductPage {
 
     getResourceCenterLinkFAQ1() {
-        return cy.get('main dl')
+        return cy.get(listFAQ, { timeout: 120000})
                 .scrollIntoView()
-                .find('#faq1_description')
-                .contains('Resource Center')
+                .find(resCenterLink.question)
+                .contains(resCenterLink.text)
     }
 
     getChannelsLinkFAQ2() {
-        return cy.get('main dl')
+        return cy.get(listFAQ)
                 .scrollIntoView()
-                .find('#faq2_description')
-                .contains('channels')
+                .find(channelsLink.question)
+                .contains(channelsLink.text)
     }
 
     getPricingLinkFAQ3() {
-        return cy.get('main dl')
+        return cy.get(listFAQ)
                 .scrollIntoView()
-                .find('#faq3_description')
-                .contains('pricing')
+                .find(pricingLink.question)
+                .contains(pricingLink.text)
     }
 
     getFaqAccordionBtn(btnNum) {
-        return cy.get('main dl>div')
+        return cy.get(faqAccordionBtn.title, { timeout: 120000 })
                 .eq(btnNum)
-                .find('button')
+                .find(faqAccordionBtn.button)
     }
 
     openSecondItemFAQ() {
@@ -46,8 +69,6 @@ class SipTrunksProdPage extends AllProductPage {
 
             
         return Cypress.on('uncaught:exception', (err) => {
-                // returning false here prevents Cypress from
-                // failing the test
                 console.log('Cypress detected uncaught exception: ', err);
                 return false;
             });
@@ -58,8 +79,6 @@ class SipTrunksProdPage extends AllProductPage {
             .click()
 
         return Cypress.on('uncaught:exception', (err) => {
-                // returning false here prevents Cypress from
-                // failing the test
                 console.log('Cypress detected uncaught exception: ', err);
                 return false;
             });
@@ -71,8 +90,6 @@ class SipTrunksProdPage extends AllProductPage {
 
 
         return Cypress.on('uncaught:exception', (err) => {
-                // returning false here prevents Cypress from
-                // failing the test
                 console.log('Cypress detected uncaught exception: ', err);
                 return false;
             });

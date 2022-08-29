@@ -15,7 +15,6 @@ Feature: "Company" header dropdown usage scenarios
         Then I am on the "About Telnyx" page
            * I can see "About us" subtitle above the title
            * I can see Telnyx office pictures
-
     Scenario: Open the "Careers" page
 
         Go to the "Cereers" page by clicking

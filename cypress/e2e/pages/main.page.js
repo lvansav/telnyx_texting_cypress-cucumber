@@ -1,22 +1,152 @@
 const { faker } = require('@faker-js/faker')
-const Header = require('./header')
 const SignUpPage = require('./sign.up.page')
 const ContactUsPage = require('./contact.us.page')
-const Footer = require('./footer')
+
+//locatos
+
+//header
+const headerSignUpBtn = 'li div [href="/sign-up"]'
+const headerContactUsBtn = 'header li [href="/contact-us"]'
+const headerAllProductsLink = 'header [href="/products"] span'
+const headerManagedservLink = '[href*="managed-services"] span'
+const headerNetworkBtn = 'header li [href$="global-ip-network"]'
+const headerDropdown = 'header li'
+
+const headerDocsLink = {
+    dropNum: 3,
+    link: '[href*="developers"]'
+}
+
+const headerBlogLink = {
+    dropNum: 3,
+    link: '[href="/resources"]'
+}
+
+const headerStoriesLink = {
+    dropNum: 3, 
+    link: '[href="/customer-stories"]'
+}
+
+const headerSavingCalcLink = {
+    dropNum: 3,
+    link: '[href="/twilio-pricing-calculator"]'
+}
+
+const headerAboutTelnyxLink = {
+    dropNum: 4,
+    link: '[href="/company"]'
+}
+
+const headerCareersLink = {
+    dropNum: 4,
+    link: '[href="/company/careers"]'
+}
+
+const headerPartnersLink = {
+    dropNum: 4,
+    link: '[href="/company/partnerships"]'
+}
+
+const headerIntegrationsLink = {
+    dropNum: 4,
+    link: '[href="/integrations"]'
+}
+
+//main
+const header = 'header'
+const mainEmailField = '[name="email"]'
+const mainTryForFreeBtn = 'button[type="submit"]'
+const mainSignUpBtn = 'main [href="/sign-up"]'
+
+//footer
+const footerSipTrunkingLink = 'footer [href="/products/sip-trunks"] span span'
+const footerSignUpLink = 'footer [href="/sign-up"] span span'
+
+
+class Header {
+    
+    getHeaderSignUpBtn() {
+        return cy.get(headerSignUpBtn)
+    }
+
+    getHeaderContactUsBtn() {
+        return cy.get(headerContactUsBtn)
+    }
+
+    getAllProdHeaderLink() {
+        return cy.get(headerAllProductsLink)
+    }
+
+    getManagedServHeadLink() {
+        return cy.get(headerManagedservLink)
+    }
+
+    getNetworkHeadBtn() {
+        return cy.get(headerNetworkBtn)
+    }
+
+    getDocsHeadLink() {
+        return cy.get(headerDropdown)
+                .eq(headerDocsLink.dropNum)
+                .find(headerDocsLink.link)
+    }
+
+    getBlogHeadLink() {
+        return cy.get(headerDropdown)
+                .eq(headerBlogLink.dropNum)
+                .find(headerBlogLink.link)
+    }
+
+    getStoriesHeadLink() {
+        return cy.get(headerDropdown)
+                .eq(headerStoriesLink.dropNum)
+                .find(headerStoriesLink.link)
+    }
+
+    getSavingCalculatorLink() {
+        return cy.get(headerDropdown)
+                .eq(headerSavingCalcLink.dropNum)
+                .find(headerSavingCalcLink.link)
+    }
+
+    getAboutTelnyxHeadLink() {
+        return cy.get(headerDropdown)
+                .eq(headerAboutTelnyxLink.dropNum)
+                .find(headerAboutTelnyxLink.link)
+    }
+
+    getCareersHeadLink() {
+        return cy.get(headerDropdown)
+                .eq(headerCareersLink.dropNum)
+                .find(headerCareersLink.link)
+    }
+
+    getPartnersHeadLink() {
+        return cy.get(headerDropdown)
+                .eq(headerPartnersLink.dropNum)
+                .find(headerPartnersLink.link)
+    }
+
+    getIntegrationsHeadLink() {
+        return cy.get(headerDropdown)
+                .eq(headerIntegrationsLink.dropNum)
+                .find(headerIntegrationsLink.link)
+    }
+};
 
 
 class MainPage extends Header {
 
     getEmailField() {
-        return cy.get('[name="email"]')
+        return cy.get(mainEmailField)
     }
 
     getTryForFreeBtn() {
-        return cy.get('button[type="submit"]')
+        return cy.get(mainTryForFreeBtn)
     }
 
     getMainSignUpBtn() {
-        return cy.get('main [href="/sign-up"]')
+        return cy.get(mainSignUpBtn)
     }
 
     headerSignUpBtnClick() {
@@ -36,7 +166,7 @@ class MainPage extends Header {
     }
 
     hoverHeader() {
-        return cy.get('header')
+        return cy.get(header)
                 .realHover()
     }
 
@@ -84,6 +214,12 @@ class MainPage extends Header {
     storiesHeadLinkClick() {
         const link = super.getStoriesHeadLink()
         link.click()
+
+                                    
+        return Cypress.on('uncaught:exception', (err) => {
+            console.log('Cypress detected uncaught exception: ', err);
+            return false;
+        });
     }
 
     savingCalculatorLinkClick() {
@@ -99,6 +235,12 @@ class MainPage extends Header {
     careersHeadLinkClick() {
         const link = super.getCareersHeadLink()
         link.click()
+
+                
+        return Cypress.on('uncaught:exception', (err) => {
+            console.log('Cypress detected uncaught exception: ', err);
+            return false;
+        });
     }
 
     partnersHeadLinkClick() {
@@ -109,6 +251,12 @@ class MainPage extends Header {
     integrationsHeadLinkClick() {
         const link = super.getIntegrationsHeadLink()
         link.click()
+
+                        
+        return Cypress.on('uncaught:exception', (err) => {
+            console.log('Cypress detected uncaught exception: ', err);
+            return false;
+        });
     }
 
     mainSignUpBtnClick() {
@@ -145,8 +293,29 @@ class MainPage extends Header {
         footer
             .getSignUpFooterLink()
             .click()
+                                
+        return Cypress.on('uncaught:exception', (err) => {
+                console.log('Cypress detected uncaught exception: ', err);
+                return false;
+            });
     }
+    
 }
 
 
-module.exports = MainPage;
+class Footer {
+
+    getSipTrunkingLink() {
+        return cy.get(footerSipTrunkingLink)
+    }
+
+    getSignUpFooterLink() {
+        return cy.get(footerSignUpLink)
+    }
+}
+
+module.exports = {
+    MainPage: MainPage,
+    Header: Header,
+    Footer: Footer
+}

@@ -1,12 +1,12 @@
 const { Given, And, When, Then } = require('@badeball/cypress-cucumber-preprocessor')
-const MainPage = require('../pages/main.page')
+const { MainPage } = require('../pages/main.page')
 
 const CustomerStoriesPage = require('../pages/customer.stories.page')
 const LightspeedStoryPage = require('../pages/lightspeed.story.page')
 
 const SavingCalcPage = require('../pages/saving.calc.page')
 
-const MoveTwillioArticlePage = require('../pages/move.twillio.article.page')
+const { MoveTwillioArticlePage } = require('../pages/articles.pages')
 
 const baseURL = Cypress.config().baseUrl
 
@@ -186,7 +186,7 @@ And(/^I click "Read our Twillio Migration Guide" button$/, () => {
 
 Then(/^I am on the "Customer story" page$/, () => {
 
-    cy.url()
+    cy.getURL()
       .should('contain', 'customer-stories')
 })
 
@@ -225,7 +225,7 @@ Then(/^I can see "Try Telnyx for free" button$/, () => {
 
 Then(/^I am on "Move from Twillio to Telnyx" article page$/, () => {
 
-    cy.url({ timeout: 120000 })
+    cy.getURL()
       .should('contain', 'twilio-migration-guide')
 })
 

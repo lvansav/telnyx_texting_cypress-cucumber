@@ -1,10 +1,12 @@
-const MainPage = require('./main.page')
+const { MainPage } = require('./main.page')
 
+//locators
+const faxApiLable = 'main [href="/products/fax-api"]'
 
 class AllProductPage extends MainPage{
 
     getFaxApiLabel() {
-        return cy.get('main [href="/products/fax-api"]')
+        return cy.get(faxApiLable)
     }
 
     faxApiClick() {
