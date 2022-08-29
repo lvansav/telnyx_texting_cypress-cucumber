@@ -8,8 +8,6 @@ const { savingCalcPage } = require('../pages/saving.calc.page')
 
 const { moveTwilioArticlePage } = require('../pages/articles.pages')
 
-const baseURL = Cypress.config().baseUrl
-
 
 Given(/^I hover over the "Resources" dropdown in the header$/, () => {
 
