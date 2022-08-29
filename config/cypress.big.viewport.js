@@ -7,6 +7,7 @@ const createEsbuildPlugin =
 
 
 module.exports = defineConfig({
+  projectId: "1hmt6v",
   viewportHeight: 1440,
   viewportWidth: 2560,
   e2e: {
