@@ -65,12 +65,11 @@ class SignUpPage {
                 email: email}
     }
 
-    signUpByAllFields() {
-        const email = faker.internet.email()
+    signUpByAllFields(email, name, password) {
         
         this.getEmailInput().type(email)
-        this.getNameInput().type(faker.name.fullName())
-        this.getPasswordInput().type(faker.internet.password(30, false, /[!-}]/, '!1'))
+        this.getNameInput().type(name)
+        this.getPasswordInput().type(password)
         this.getTermsCheckbox().click()
         this.getSubscribeCheckbox().click()
         this.getSubmitBtn().click()

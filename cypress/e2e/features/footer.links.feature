@@ -3,15 +3,15 @@ Feature: Footer links usage scenarios
     Background:
         Given The Telnyx website
         And Accept all cookies
-    
-    Scenario: Sign up by the footer link
+    @only
+    Scenario: Sign up by the footer link with random data
         
         Sign up after click "Sign up" in the
         footer by filling in all fields by
         random valid data on the main page
 
         Given I click "Sign up" footer link
-        When I sign up with filling in all fields
+        When I sign up with filling in all fields with random data
         Then I am on verify email page
            * I can see verify email
            * I can see "Resend verification email" button

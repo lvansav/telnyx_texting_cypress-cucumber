@@ -1,4 +1,6 @@
 const { Given, And, When, Then } = require('@badeball/cypress-cucumber-preprocessor')
+const { faker } = require('@faker-js/faker')
+
 const { MainPage } = require('../pages/main.page')
 
 const SignUpPage = require('../pages/sign.up.page')
@@ -10,6 +12,10 @@ const { ChannelBillingArticlePage } = require('../pages/articles.pages')
 const SipTrunksPricingPage = require('../pages/sip.trunking.pricing.page')
 
 const baseURL = Cypress.config().baseUrl                                                
+
+const fakeEmail = faker.internet.email()
+const fakeFullName = faker.name.fullName()
+const fakePassword = faker.internet.password(30, false, /[!-}]/, '!1')
 
 
 Given(/^I click "Sign up" footer link$/, () => {
@@ -26,11 +32,11 @@ Given(/^I click "Elastic SIP Trunking" footer link$/, () => {
         .footerSipTrunkingLinkClick()
 })
 
-When(/^I sign up with filling in all fields$/, () => {
+When(/^I sign up with filling in all fields with random data$/, () => {
     const signUpPage = new SignUpPage
 
     signUpPage
-        .signUpByAllFields()
+        .signUpByAllFields(fakeEmail, fakeFullName, fakePassword)
 })
 
 When(/^I click "How many SIP trunks do I need" accordion$/, () => {
