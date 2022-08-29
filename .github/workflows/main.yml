@@ -17,7 +17,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-          record: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
@@ -31,6 +30,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
+          record: true
           tag: node-${{ matrix.node }}
           install-command: npm install
         env:
