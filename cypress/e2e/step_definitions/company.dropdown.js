@@ -1,15 +1,15 @@
 const { Given, And, When, Then } = require('@badeball/cypress-cucumber-preprocessor')
 const { faker } = require('@faker-js/faker')
 
-const { MainPage } = require('../pages/main.page')
+const { mainPage } = require('../pages/main.page')
 
-const CompanyAboutPage = require('../pages/company.about.page')
-const CompanyCareersPage = require('../pages/company.careers.page')
-const CompanyPartnersPage = require('../pages/company.partners.page')
+const { companyAboutPage } = require('../pages/company.about.page')
+const { companyCareersPage } = require('../pages/company.careers.page')
+const { companyPartnersPage } = require('../pages/company.partners.page')
 
-const IntegrationsPage = require('../pages/integrations.page')
-const { MarketplacePage } = require('../pages/support.bases.pages')
-const MarketplaceMSTeamsPage = require('../pages/marketplase.msteams.page')
+const { integrationsPage } = require('../pages/integrations.page')
+const { marketplacePage } = require('../pages/support.bases.pages')
+const { marketplaceMSTeamsPage } = require('../pages/marketplase.msteams.page')
 
 const baseURL = Cypress.config().baseUrl
 
@@ -27,7 +27,6 @@ const randomUseCaseOpt = Math.floor(Math.random() * 18) + 1
 
 
 Given(/^I hover over the "Company" dropdown in the header$/, () => {
-    const mainPage = new MainPage
 
     mainPage
         .hoverHeader()
@@ -37,7 +36,6 @@ Given(/^I hover over the "Company" dropdown in the header$/, () => {
 })
 
 When(/^I click "About Telnyx" link$/, () => {
-    const mainPage = new MainPage
 
     mainPage
         .aboutTelnyxHeadLinkClick()
@@ -47,7 +45,6 @@ When(/^I click "About Telnyx" link$/, () => {
 })
 
 When(/^I click "Careers" link$/, () => {
-    const mainPage = new MainPage
 
     mainPage
         .careersHeadLinkClick()
@@ -57,7 +54,6 @@ When(/^I click "Careers" link$/, () => {
 })
 
 When(/^I click "Partners" link$/, () => {
-    const mainPage = new MainPage
 
     mainPage
         .partnersHeadLinkClick()
@@ -67,7 +63,6 @@ When(/^I click "Partners" link$/, () => {
 })
 
 When(/^I click "Integrations" link$/, () => {
-    const mainPage = new MainPage
 
     mainPage
         .integrationsHeadLinkClick()
@@ -77,7 +72,6 @@ When(/^I click "Integrations" link$/, () => {
 })
 
 And(/^I fill in the all fields in "Become a Telnyx partner" form with random data$/, () => {
-    const companyPartnersPage = new CompanyPartnersPage
 
     companyPartnersPage
         .scrollToBuildList()
@@ -95,28 +89,24 @@ And(/^I fill in the all fields in "Become a Telnyx partner" form with random dat
 })
 
 And(/^I click "Explore our marketplace" button$/, () => {
-    const integrationsPage = new IntegrationsPage
 
     integrationsPage
         .exploreMarketplaceBtnClick()
 })
 
 And(/^I search '(\w+)' by the search field$/, (search) => {
-    const marketplacePage = new MarketplacePage
 
     marketplacePage
         .fillSearchField(search)
 })
 
 And(/^I click first link in possible result list$/, () => {
-    const marketplacePage = new MarketplacePage
 
     marketplacePage
         .firstPossibleResultClick()
 })
 
 And(/^I fill in all fields in the Become a Beta Tester form with random data$/, () => {
-    const integrationsPage = new IntegrationsPage
 
     integrationsPage
         .getTelnyxDiffTitle()
@@ -146,7 +136,6 @@ Then(/^I am on the "Careers" page$/, () => {
 })
 
 Then(/^I can see "About us" subtitle above the title$/, () => {
-    const companyAboutPage = new CompanyAboutPage
 
     companyAboutPage
         .getPageSubtitle()
@@ -154,7 +143,6 @@ Then(/^I can see "About us" subtitle above the title$/, () => {
 })
 
 Then(/^I can see "careers at telnyx" subtitle above the title$/, () => {
-    const companyCareersPage = new CompanyCareersPage
 
     companyCareersPage
         .getPageSubtitle()
@@ -162,7 +150,6 @@ Then(/^I can see "careers at telnyx" subtitle above the title$/, () => {
 })
 
 Then(/^I can see Telnyx office pictures$/, () => {
-    const companyAboutPage = new CompanyAboutPage
 
     companyAboutPage
         .scrollToOfficePictures()
@@ -173,7 +160,6 @@ Then(/^I can see Telnyx office pictures$/, () => {
 })
 
 Then(/^I can see "Come and work with us!" title$/, () => {
-    const companyCareersPage = new CompanyCareersPage
     
     companyCareersPage
         .getListOfVacanciesTitle()
@@ -181,7 +167,6 @@ Then(/^I can see "Come and work with us!" title$/, () => {
 })
 
 Then(/^All fields are filled$/, () => {
-    const companyPartnersPage = new CompanyPartnersPage
 
     companyPartnersPage
         .getFirstNameField()
@@ -230,7 +215,6 @@ Then(/^I am on the '(\w+)' page$/, (search) => {
 })
 
 Then(/^I can see '(\w+)' title$/, (search) => {
-    const marketplaceMSTeamsPage = new MarketplaceMSTeamsPage
 
     marketplaceMSTeamsPage
         .getPageTitle()
@@ -238,7 +222,6 @@ Then(/^I can see '(\w+)' title$/, (search) => {
 })
 
 Then(/^I can see "Get started" button$/, () => {
-    const marketplaceMSTeamsPage = new MarketplaceMSTeamsPage
 
     marketplaceMSTeamsPage
         .getInstallDropdown()
@@ -246,7 +229,6 @@ Then(/^I can see "Get started" button$/, () => {
 })
 
 Then(/^Last item in the breadcrumb is '(\w+)'$/, (search) => {
-    const marketplaceMSTeamsPage = new MarketplaceMSTeamsPage
 
     marketplaceMSTeamsPage
         .getLastBreadcrumbsItem()
@@ -254,7 +236,6 @@ Then(/^Last item in the breadcrumb is '(\w+)'$/, (search) => {
 })
 
 Then(/^All fields are filling$/, () => {
-    const integrationsPage = new IntegrationsPage
 
     integrationsPage
         .getFirstNameField()

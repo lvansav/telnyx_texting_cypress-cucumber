@@ -16,6 +16,11 @@ class SipTrunkingArticlePage extends ArticleBase {
 
 module.exports = {
     SipTrunkingArticlePage: SipTrunkingArticlePage,
+    sipTrunkingArticlePage: new SipTrunkingArticlePage,
+
     MoveTwillioArticlePage: MoveTwillioArticlePage,
-    ChannelBillingArticlePage: ChannelBillingArticlePage
+    moveTwilioArticlePage: new MoveTwillioArticlePage,
+
+    ChannelBillingArticlePage: ChannelBillingArticlePage,
+    channelBillingArticlePage: new ChannelBillingArticlePage
 }

@@ -1,4 +1,4 @@
-const AllProductPage = require('./all.product.page')
+const { AllProductPage } = require('./all.product.page')
 
 //locators
 const listFAQ = 'main dl'
@@ -96,4 +96,7 @@ class SipTrunksProdPage extends AllProductPage {
     }
 }
 
-module.exports = SipTrunksProdPage
+module.exports = {
+    SipTrunksProdPage: SipTrunksProdPage,
+    sipTrunksProdPage: new SipTrunksProdPage
+}

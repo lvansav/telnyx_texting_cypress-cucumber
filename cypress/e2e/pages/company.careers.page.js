@@ -10,4 +10,7 @@ class CompanyCareersPage extends CompanyBase {
     }
 }
 
-module.exports = CompanyCareersPage
+module.exports = {
+    CompanyCareersPage: CompanyCareersPage,
+    companyCareersPage: new CompanyCareersPage
+}

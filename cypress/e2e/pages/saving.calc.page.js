@@ -139,4 +139,7 @@ class SavingCalcPage extends MainPage {
     }
 }
 
-module.exports = SavingCalcPage
+module.exports = {
+    SavingCalcPage: SavingCalcPage,
+    savingCalcPage: new SavingCalcPage
+}

@@ -5,4 +5,7 @@ class LightspeedStoryPage extends StoryBase {
 
 }
 
-module.exports = LightspeedStoryPage
+module.exports = {
+    LightspeedStoryPage: LightspeedStoryPage,
+    lightspeedStoryPage: new LightspeedStoryPage
+}

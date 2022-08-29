@@ -1,18 +1,17 @@
 const { Given, And, When, Then } = require('@badeball/cypress-cucumber-preprocessor')
-const { MainPage } = require('../pages/main.page')
+const { mainPage } = require('../pages/main.page')
 
-const CustomerStoriesPage = require('../pages/customer.stories.page')
-const LightspeedStoryPage = require('../pages/lightspeed.story.page')
+const { customerStoriesPage } = require('../pages/customer.stories.page')
+const { lightspeedStoryPage } = require('../pages/lightspeed.story.page')
 
-const SavingCalcPage = require('../pages/saving.calc.page')
+const { savingCalcPage } = require('../pages/saving.calc.page')
 
-const { MoveTwillioArticlePage } = require('../pages/articles.pages')
+const { moveTwillioArticlePage } = require('../pages/articles.pages')
 
 const baseURL = Cypress.config().baseUrl
 
 
 Given(/^I hover over the "Resources" dropdown in the header$/, () => {
-    const mainPage = new MainPage
 
     mainPage
         .hoverHeader()
@@ -22,7 +21,6 @@ Given(/^I hover over the "Resources" dropdown in the header$/, () => {
 })
 
 When(/^I click "Customer story" link$/, () => {
-    const mainPage = new MainPage
 
     mainPage
         .storiesHeadLinkClick()
@@ -32,7 +30,6 @@ When(/^I click "Customer story" link$/, () => {
 })
 
 When(/^I click "Saving Calculator" link$/, () => {
-    const mainPage = new MainPage
 
     mainPage
         .savingCalculatorLinkClick()
@@ -42,7 +39,6 @@ When(/^I click "Saving Calculator" link$/, () => {
 })
 
 And(/^I click first "Read customer story"$/, () => {
-    const customerStoriesPage = new CustomerStoriesPage
 
     customerStoriesPage
         .getReadCustomerStoriesLink(0)
@@ -50,7 +46,6 @@ And(/^I click first "Read customer story"$/, () => {
 })
 
 And(/^I choose "(\w+)"$/, (service) => {
-    const savingCalcPage = new SavingCalcPage
     
     if (service === "Messaging") {
         savingCalcPage
@@ -71,7 +66,6 @@ And(/^I choose "(\w+)"$/, (service) => {
 })
 
 And(/^I click "Continue" button$/, () => {
-    const savingCalcPage = new SavingCalcPage
 
     savingCalcPage
         .getContinueBtn()
@@ -79,7 +73,6 @@ And(/^I click "Continue" button$/, () => {
 })
 
 And(/^I type (\d+) local numbers$/, (local) => {
-    const savingCalcPage = new SavingCalcPage
 
     savingCalcPage
         .getLocalNumField()
@@ -88,7 +81,6 @@ And(/^I type (\d+) local numbers$/, (local) => {
 })
 
 And(/^I type (\d+) toll-free numbers$/, (tollFree) => {
-    const savingCalcPage = new SavingCalcPage
 
     savingCalcPage
         .getTollFreeNumField()
@@ -97,7 +89,6 @@ And(/^I type (\d+) toll-free numbers$/, (tollFree) => {
 })
 
 And(/^I type (\d+) sendSMS$/, (sendSMS) => {
-    const savingCalcPage = new SavingCalcPage
 
     savingCalcPage
         .getSendSmsField()
@@ -106,7 +97,6 @@ And(/^I type (\d+) sendSMS$/, (sendSMS) => {
 })
 
 And(/^I type (\d+) receiveSMS$/, (receiveSMS) => {
-    const savingCalcPage = new SavingCalcPage
 
     savingCalcPage
         .getReceiveSmsField()
@@ -115,7 +105,6 @@ And(/^I type (\d+) receiveSMS$/, (receiveSMS) => {
 })
 
 And(/^I type (\d+) sendMMS$/, (sendMMS) => {
-    const savingCalcPage = new SavingCalcPage
 
     savingCalcPage
         .getSendMmsField()
@@ -124,7 +113,6 @@ And(/^I type (\d+) sendMMS$/, (sendMMS) => {
 })
 
 And(/^I type (\d+) receive sendMMS$/, (receiveMMS) => {
-    const savingCalcPage = new SavingCalcPage
 
     savingCalcPage
         .getReceiveMmsField()
@@ -133,7 +121,6 @@ And(/^I type (\d+) receive sendMMS$/, (receiveMMS) => {
 })
 
 And(/^I type (\d+) desired receive calls to local numbers$/, (toLocal) => {
-    const savingCalcPage = new SavingCalcPage
     
     savingCalcPage
         .getReceiveToLocalField()
@@ -142,7 +129,6 @@ And(/^I type (\d+) desired receive calls to local numbers$/, (toLocal) => {
 })
 
 And(/^I type (\d+) desired receive calls to toll-free numbers$/, (toTollFree) => {
-    const savingCalcPage = new SavingCalcPage
 
     savingCalcPage
         .getReceiveToTollFreeField()
@@ -151,7 +137,6 @@ And(/^I type (\d+) desired receive calls to toll-free numbers$/, (toTollFree) =>
 })
 
 And(/^I type (\d+) desired outbond calls$/, (outbond) => {
-    const savingCalcPage = new SavingCalcPage
 
     savingCalcPage
         .getOutbondField()
@@ -160,7 +145,6 @@ And(/^I type (\d+) desired outbond calls$/, (outbond) => {
 })
 
 And(/^I type (\d+) desired receive call with Call control$/, (receiveControl) => {
-    const savingCalcPage = new SavingCalcPage
 
     savingCalcPage
         .getReceiveCallControlField()
@@ -169,7 +153,6 @@ And(/^I type (\d+) desired receive call with Call control$/, (receiveControl) =>
 })
 
 And(/^I type (\d+) desired making calls with Call control$/, (makeControl) => {
-    const savingCalcPage = new SavingCalcPage
 
     savingCalcPage
         .getMakeCallControlField()
@@ -178,7 +161,6 @@ And(/^I type (\d+) desired making calls with Call control$/, (makeControl) => {
 })
 
 And(/^I click "Read our Twillio Migration Guide" button$/, () => {
-    const savingCalcPage = new SavingCalcPage
 
     savingCalcPage
         .twillioMigrGuideBtnClick()
@@ -191,7 +173,6 @@ Then(/^I am on the "Customer story" page$/, () => {
 })
 
 Then(/^I can see side company information menu$/, () => {
-    const lightspeedStoryPage = new LightspeedStoryPage
 
     lightspeedStoryPage
         .getCompanyInformationMenu()
@@ -199,7 +180,6 @@ Then(/^I can see side company information menu$/, () => {
 })
 
 Then(/^I can see side menu with used products$/, () => {
-    const lightspeedStoryPage = new LightspeedStoryPage
 
     lightspeedStoryPage
         .getUsedProductsMenu()
@@ -207,7 +187,6 @@ Then(/^I can see side menu with used products$/, () => {
 })
 
 Then(/^I can see "Your saving" information block$/, () => {
-    const savingCalcPage = new SavingCalcPage
 
     savingCalcPage
         .getYourSavingInfoBlock()
@@ -216,7 +195,6 @@ Then(/^I can see "Your saving" information block$/, () => {
 })
 
 Then(/^I can see "Try Telnyx for free" button$/, () => {
-    const savingCalcPage = new SavingCalcPage
 
     savingCalcPage
         .getTryTelnyxFreeBtn()
@@ -230,7 +208,6 @@ Then(/^I am on "Move from Twillio to Telnyx" article page$/, () => {
 })
 
 Then(/^I can see "Move from Twillio to Telnyx" article title$/, () => {
-    const moveTwillioArticlePage = new MoveTwillioArticlePage
 
     moveTwillioArticlePage
         .getArticleTitle()

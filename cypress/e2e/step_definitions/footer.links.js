@@ -1,15 +1,15 @@
 const { Given, And, When, Then } = require('@badeball/cypress-cucumber-preprocessor')
 const { faker } = require('@faker-js/faker')
 
-const { MainPage } = require('../pages/main.page')
+const { mainPage } = require('../pages/main.page')
 
-const SignUpPage = require('../pages/sign.up.page')
-const VerifyEmailPage = require('../pages/verify.email.page')
+const { signUpPage } = require('../pages/sign.up.page')
+const { verifyEmailPage } = require('../pages/verify.email.page')
 
-const SipTrunksProdPage = require('../pages/sip.trunks.prod.page')
-const { SipTrunkingArticlePage } = require('../pages/articles.pages')
-const { ChannelBillingArticlePage } = require('../pages/articles.pages')
-const SipTrunksPricingPage = require('../pages/sip.trunking.pricing.page')
+const { sipTrunksProdPage } = require('../pages/sip.trunks.prod.page')
+const { sipTrunkingArticlePage } = require('../pages/articles.pages')
+const { channelBillingArticlePage } = require('../pages/articles.pages')
+const { sipTrunksPricingPage } = require('../pages/sip.trunking.pricing.page')
 
 const baseURL = Cypress.config().baseUrl                                                
 
@@ -19,56 +19,48 @@ const fakePassword = faker.internet.password(30, false, /[!-}]/, '!1')
 
 
 Given(/^I click "Sign up" footer link$/, () => {
-    const mainPage = new MainPage
 
     mainPage
         .footerSignUpLinkClick()
 })
 
 Given(/^I click "Elastic SIP Trunking" footer link$/, () => {
-    const mainPage = new MainPage
 
     mainPage
         .footerSipTrunkingLinkClick()
 })
 
 When(/^I sign up with filling in all fields with random data$/, () => {
-    const signUpPage = new SignUpPage
 
     signUpPage
         .signUpByAllFields(fakeEmail, fakeFullName, fakePassword)
 })
 
 When(/^I click "How many SIP trunks do I need" accordion$/, () => {
-    const sipTrunksProdPage = new SipTrunksProdPage
 
     sipTrunksProdPage
         .openSecondItemFAQ()
 })
 
 When(/^I click "How much does SIP trunking cost" accordion$/, () => {
-    const sipTrunksProdPage = new SipTrunksProdPage
 
     sipTrunksProdPage
         .openThirdItemFAQ()
 })
 
 When(/^I click "Resource Center" link in the "Frequency asked questions" block$/, () => {
-    const sipTrunksProdPage = new SipTrunksProdPage
 
     sipTrunksProdPage
         .resourceCenterLinkFAQ1Click()
 })
 
 And(/^I click "channels" link$/, () => {
-    const sipTrunksProdPage = new SipTrunksProdPage
 
     sipTrunksProdPage
         .channelsLinkFAQ2Click()
 })
 
 And(/^I click "pricing" link$/, () => {
-    const sipTrunksProdPage = new SipTrunksProdPage
 
     sipTrunksProdPage
         .pricingLinkFAQ3Click()
@@ -81,7 +73,6 @@ Then(/^I am on verify email page$/, () => {
 })
 
 Then(/^I can see verify email$/, () => {
-    const verifyEmailPage = new VerifyEmailPage
 
     verifyEmailPage
         .getVerifyEmail()
@@ -89,7 +80,6 @@ Then(/^I can see verify email$/, () => {
 })
 
 Then(/^I can see "Resend verification email" button$/, () => {
-    const verifyEmailPage = new VerifyEmailPage
 
     verifyEmailPage
         .getResentEmailBtn()
@@ -116,7 +106,6 @@ Then(/^I am on the SIP Trunk Pricing page$/, () => {
 })
 
 Then(/^The title of the article contains "What SIP trunking is"$/, () => {
-    const sipTrunkingArticlePage = new SipTrunkingArticlePage
 
     sipTrunkingArticlePage
         .getArticleTitle()
@@ -124,7 +113,6 @@ Then(/^The title of the article contains "What SIP trunking is"$/, () => {
 })
 
 Then(/^The title of the article contains "Channel Billing"$/, () => {
-    const channelBillingArticlePage = new ChannelBillingArticlePage
 
     channelBillingArticlePage
         .getArticleTitle()
@@ -132,7 +120,6 @@ Then(/^The title of the article contains "Channel Billing"$/, () => {
 })
 
 Then(/^The author of the article Odhran Reidy$/, () => {
-    const sipTrunkingArticlePage = new SipTrunkingArticlePage
 
     sipTrunkingArticlePage
         .getArticleAuthor()
@@ -141,7 +128,6 @@ Then(/^The author of the article Odhran Reidy$/, () => {
 })
 
 Then(/^The author of the article Josh Whitaker$/, () => {
-    const channelBillingArticlePage = new ChannelBillingArticlePage
 
     channelBillingArticlePage
         .getArticleAuthor()
@@ -150,7 +136,6 @@ Then(/^The author of the article Josh Whitaker$/, () => {
 })
 
 Then(/^The title of the page contains "SIP Trunk Pricing"$/, () => {
-    const sipTrunksPricingPage = new SipTrunksPricingPage
 
     sipTrunksPricingPage
         .getPageTitle()

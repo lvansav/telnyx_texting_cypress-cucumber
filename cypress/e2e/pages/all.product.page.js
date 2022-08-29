@@ -14,4 +14,7 @@ class AllProductPage extends MainPage{
     }
 }
 
-module.exports = AllProductPage
+module.exports = {
+    AllProductPage: AllProductPage,
+    allProductPage: new AllProductPage
+}

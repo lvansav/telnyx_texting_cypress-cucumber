@@ -45,4 +45,7 @@ class SignUpPage {
     }
 }
 
-module.exports = SignUpPage;
+module.exports = {
+    SignUpPage: SignUpPage,
+    signUpPage: new SignUpPage
+}

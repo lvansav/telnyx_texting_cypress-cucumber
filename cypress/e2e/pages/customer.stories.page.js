@@ -13,4 +13,7 @@ class CustomerStoriesPage extends MainPage {
 
 }
 
-module.exports = CustomerStoriesPage
+module.exports = {
+    CustomerStoriesPage: CustomerStoriesPage,
+    customerStoriesPage: new CustomerStoriesPage
+}

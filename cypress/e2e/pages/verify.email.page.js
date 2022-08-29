@@ -20,4 +20,7 @@ class VerifyEmailPage {
     }
 }
 
-module.exports = VerifyEmailPage;
+module.exports = {
+    VerifyEmailPage: VerifyEmailPage,
+    verifyEmailPage: new VerifyEmailPage
+}

@@ -80,4 +80,7 @@ class IntegrationsPage extends MainPage {
     }
 }
 
-module.exports = IntegrationsPage
+module.exports = {
+    IntegrationsPage: IntegrationsPage,
+    integrationsPage: new IntegrationsPage
+}

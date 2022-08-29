@@ -1,5 +1,3 @@
-const SignUpPage = require('./sign.up.page')
-
 //locatos
 
 //header
@@ -314,6 +312,11 @@ class Footer {
 
 module.exports = {
     MainPage: MainPage,
+    mainPage: new MainPage,
+
     Header: Header,
-    Footer: Footer
+    header: new Header,
+
+    Footer: Footer,
+    footer: new Footer
 }

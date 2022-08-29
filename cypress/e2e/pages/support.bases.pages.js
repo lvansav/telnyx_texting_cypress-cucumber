@@ -118,5 +118,7 @@ module.exports = {
     StoryBase: StoryBase,
     PricingBase: PricingBase,
     ArticleBase: ArticleBase,
-    MarketplacePage: MarketplacePage
+
+    MarketplacePage: MarketplacePage,
+    marketplacePage: new MarketplacePage
 }

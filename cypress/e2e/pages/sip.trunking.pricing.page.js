@@ -5,4 +5,7 @@ class SipTrunksPricingPage extends PricingBase {
 
 }
 
-module.exports = SipTrunksPricingPage
+module.exports = {
+    SipTrunksPricingPage: SipTrunksPricingPage,
+    sipTrunksPricingPage: new SipTrunksPricingPage
+}

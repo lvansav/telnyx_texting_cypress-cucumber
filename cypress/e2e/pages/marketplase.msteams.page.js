@@ -20,4 +20,7 @@ class MarketplaceMSTeamsPage extends MarketplacePage {
     }
 }
 
-module.exports = MarketplaceMSTeamsPage
+module.exports = {
+    MarketplaceMSTeamsPage: MarketplaceMSTeamsPage,
+    marketplaceMSTeamsPage: new MarketplaceMSTeamsPage
+}
