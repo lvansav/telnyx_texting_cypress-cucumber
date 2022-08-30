@@ -26,6 +26,7 @@ module.exports = defineConfig({
     specPattern: "cypress/e2e/features/*.feature",
     baseUrl: "https://telnyx.com/",
     chromeWebSecurity: false,
+    scrollBehavior: "center",
   },
   retries: {
     'runMode': 2,

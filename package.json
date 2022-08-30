@@ -9,8 +9,10 @@
     "cypress:run:chrome": "cypress run --browser chrome",
     "cypress:run:firefox": "cypress run --browser firefox",
     "cypress:run:edge": "cypress run --browser edge",
-    "cypress:run:viewport:large": "cypress run --config-file config/cypress.big.viewport.js",
-    "cypress:open:viewport:large": "npx cypress open --config-file config/cypress.big.viewport.js",
+    "cypress:run:viewport:wqhd": "cypress run --config-file config/cypress.wqhd.js",
+    "cypress:open:viewport:wqhd": "npx cypress open --config-file config/cypress.wqhd.js",
+    "cypress:run:viewport:hd": "npx cypress open --config-file config/cypress.hd.js",
+    "cypress:open:viewport:hd": "npx cypress open --config-file config/cypress.hd.js",
     "report:generate": "node ./helper/cucumber-html-report.js"
   },
   "repository": {

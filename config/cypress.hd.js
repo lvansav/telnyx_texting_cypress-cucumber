@@ -8,8 +8,8 @@ const createEsbuildPlugin =
 
 module.exports = defineConfig({
   projectId: "1hmt6v",
-  viewportHeight: 1080,
-  viewportWidth: 1920,
+  viewportHeight: 720,
+  viewportWidth: 1480,
   e2e: {
     baseUrl: 'https://telnyx.com',
     pageLoadTimeout: 120000,
@@ -29,7 +29,7 @@ module.exports = defineConfig({
     scrollBehavior: "center",
   },
   retries: {
-    'runMode': 3,
+    'runMode': 2,
     'openMode': 2
   }
 });
