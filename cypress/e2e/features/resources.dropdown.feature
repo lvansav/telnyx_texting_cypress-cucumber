@@ -4,7 +4,7 @@ Feature: "Resources" header dropdown usage scenarios
         Given The Telnyx website
         And Accept all cookies
 
-    Scenario: Open the first "Customer story" page
+    Scenario: Should open the first "Customer story" page
 
         Go to the first "Customer story" page from
         main page
@@ -16,7 +16,7 @@ Feature: "Resources" header dropdown usage scenarios
            * I can see side company information menu
            * I can see side menu with used products
 
-    Scenario Outline: Use saving calculator for Messaging API service
+    Scenario Outline: Should use saving calculator for Messaging API service
 
         Given I hover over the "Resources" dropdown in the header
         When I click "Saving Calculator" link
@@ -36,7 +36,7 @@ Feature: "Resources" header dropdown usage scenarios
         | service   | local | toll-free | sendSMS | receiveSMS | sendMMS | receiveMMS |
         | Messaging | 10    | 10        | 10      | 10         | 10      | 10         |
 
-    Scenario Outline: Use saving calculator for "Elastic SIP Trunking" service
+    Scenario Outline: Should use saving calculator for "Elastic SIP Trunking" service
 
         Given I hover over the "Resources" dropdown in the header
         When I click "Saving Calculator" link
@@ -55,7 +55,7 @@ Feature: "Resources" header dropdown usage scenarios
         | service  | local | toll-free | to local | to toll-free | outbond |
         | Trunking | 10    | 10        | 10       | 10           | 10      |
 
-    Scenario Outline: Use saving calculator for "Voice API" service
+    Scenario Outline: Should use saving calculator for "Voice API" service
 
         Given I hover over the "Resources" dropdown in the header
         When I click "Saving Calculator" link
@@ -73,7 +73,7 @@ Feature: "Resources" header dropdown usage scenarios
            | service | local | toll-free | receive with call control | make with call control |
            | Voice   | 10    | 10        | 10                        | 10                     |
 
-    Scenario Outline: Use saving calculator for Messaging, Voice and SIP trunkin
+    Scenario Outline: Should use saving calculator for Messaging, Voice and SIP trunkin
 
         Given I hover over the "Resources" dropdown in the header
         When I click "Saving Calculator" link
@@ -100,7 +100,7 @@ Feature: "Resources" header dropdown usage scenarios
         | service I | service II | service III | local | toll-free | sendSMS | receiveSMS | sendMMS | receiveMMS | to local | to toll-free | outbond | receive control | make control |
         | Messaging | Trunking   | Voice       | 10    | 10        | 10      | 10         | 10      | 10         | 10       | 10           | 10      | 10              | 10           |
     
-    Scenario: Open the "Twillio migration guide" article from saving calculator page
+    Scenario: Should open the "Twillio migration guide" article from saving calculator page
 
         Given I hover over the "Resources" dropdown in the header
         When I click "Saving Calculator" link

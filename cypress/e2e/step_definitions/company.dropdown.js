@@ -19,7 +19,7 @@ const fakeCompany = faker.company.name()
 const fakeEmail = faker.internet.email()
 const fakePhone = faker.phone.number()
 const randomPartnerTypeOpt = Math.floor(Math.random() * 5) + 1
-const randomParagraph = faker.lorem.paragraph()
+const randomSentence = faker.lorem.sentence()
 
 const fakeWebsite = faker.internet.url()
 const randomIndustry = faker.commerce.product()
@@ -84,7 +84,7 @@ And(/^I fill in the all fields in "Become a Telnyx partner" form with random dat
             fakeEmail,
             fakePhone,
             randomPartnerTypeOpt,
-            randomParagraph
+            randomSentence
         )
 })
 
@@ -200,7 +200,7 @@ Then(/^All fields are filled$/, () => {
     companyPartnersPage
         .getBecomeReasonField()
         .should('be.visible')
-        .and('have.value', randomParagraph)
+        .and('have.value', randomSentence)
 
     companyPartnersPage
         .getReceiveEmailsChexbox()

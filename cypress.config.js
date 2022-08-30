@@ -29,7 +29,7 @@ module.exports = defineConfig({
     scrollBehavior: "center",
   },
   retries: {
-    'runMode': 3,
+    'runMode': 2,
     'openMode': 2
   }
 });

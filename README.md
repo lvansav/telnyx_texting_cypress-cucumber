@@ -9,7 +9,7 @@ Available scripts:
     npm run cypress:open - open headed cypress framework
     npm run cypress:run:viewport:wqhd - run tests in WQHD screen resolution
     npm run cypress:open:viewport:wqhd - open cypress in WQHD screen resolution
-    npm run cypress:run:viewport:hd - run tests in WQHD screen resolution
+    npm run cypress:run:viewport:hd - run tests in HD screen resolution
     npm run cypress:open:viewport:hd - open cypress in HD screen resolution
     npm run report:generate - create reports folder and add html test run report to it
 

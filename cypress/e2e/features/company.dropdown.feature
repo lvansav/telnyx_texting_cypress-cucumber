@@ -4,7 +4,7 @@ Feature: "Company" header dropdown usage scenarios
         Given The Telnyx website
         And Accept all cookies
     
-    Scenario: Open the "About Telnyx" page
+    Scenario: Should open the "About Telnyx" page
 
         Go to the "About Telnyx" page by clicking
         "About Tenyx" link in "Company" header
@@ -16,7 +16,7 @@ Feature: "Company" header dropdown usage scenarios
            * I can see "About us" subtitle above the title
            * I can see Telnyx office pictures
     
-    Scenario: Open the "Careers" page
+    Scenario: Should open the "Careers" page
 
         Go to the "Cereers" page by clicking
         "Careers" link in "Company" header
@@ -28,7 +28,7 @@ Feature: "Company" header dropdown usage scenarios
            * I can see "careers at telnyx" subtitle above the title
            * I can see "Come and work with us!" title
     
-    Scenario: Become to Telnyx partners on the Partners page with random data
+    Scenario: Should become to Telnyx partners on the Partners page with random data
 
         Become to Tenyx partners on the "Parents"
         page by filling in all fields after clicking
@@ -40,7 +40,7 @@ Feature: "Company" header dropdown usage scenarios
         And I fill in the all fields in "Become a Telnyx partner" form with random data
         Then All fields are filled
 
-    Scenario Outline: Go to the "MS Teams integrations" page
+    Scenario Outline: Should go to the "MS Teams integrations" page
 
         Go to the "MS Teams integrations" page in
         the marketplace from main page
@@ -59,7 +59,7 @@ Feature: "Company" header dropdown usage scenarios
         |search|
         |Teams |
     
-    Scenario: Become a Beta Tester in the Integrations page with random data
+    Scenario: Should become a Beta Tester in the Integrations page with random data
 
         Go to the Integrations page from main page
         and become a Beta Tester by filling in the all

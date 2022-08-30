@@ -4,7 +4,7 @@ Feature: Footer links usage scenarios
         Given The Telnyx website
         And Accept all cookies
     
-    Scenario: Sign up by the footer link with random data
+    Scenario: Should sign up by the footer link with random data
         
         Sign up after click "Sign up" in the
         footer by filling in all fields by
@@ -16,7 +16,7 @@ Feature: Footer links usage scenarios
            * I can see verify email
            * I can see "Resend verification email" button
 
-    Scenario: Open "What SIP trunking is" article
+    Scenario: Should open "What SIP trunking is" article
         
         Go to "What SIP trunking is" article by
         footer link to Elastic SIP trunking prod. page
@@ -28,7 +28,7 @@ Feature: Footer links usage scenarios
            * The title of the article contains "What SIP trunking is"
            * The author of the article Odhran Reidy
 
-    Scenario: Open "Channel Billing" article
+    Scenario: Should open "Channel Billing" article
 
         Go to the "Channel Billing" article by footer
         link to Elastic SIP Trunking prod. page on the
@@ -41,7 +41,7 @@ Feature: Footer links usage scenarios
            * The title of the article contains "Channel Billing"
            * The author of the article Josh Whitaker
 
-    Scenario: Open "SIP Trunking Pricing" page from accordion in product page
+    Scenario: Should open "SIP Trunking Pricing" page from accordion in product page
 
         Go to the "SIP Trunking Pricing" page by
         accordion on the Elastic SIP Trunking prod.
